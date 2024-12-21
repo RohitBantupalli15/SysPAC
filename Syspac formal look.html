@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SysPAC - Systems, Architecture, and Parallel Computing Group @IIITs</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+        }
+
+        body {
+            line-height: 1.7;
+            background-color: #ffffff;
+            color: #2c3e50;
+        }
+
+        .navbar {
+            background: #34495e;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: normal;
+            font-family: 'Courier New', monospace;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        .header {
+            background: #f5f6fa;
+            padding: 8rem 2rem 4rem;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        .section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .welcome-section {
+            background: white;
+            border-left: 4px solid #3498db;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tasks-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .task-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-left: 4px solid #2ecc71;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-weight: normal;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #34495e;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #546e7a;
+        }
+
+        .contact-section {
+            background: #f5f6fa;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-section a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: #34495e;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .task-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">SysPAC@IIITs</div>
+            <div class="nav-links">
+                <a href="https://bheemhh.github.io">Home</a>
+                <a href="https://bheemhh.github.io/Courses.html">Courses</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>Systems, Architecture, and Parallel Computing Group</h1>
+            <p>Advancing research in computer systems and architecture at IIITs</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="welcome-section">
+                <h2>Welcome to SysPAC</h2>
+                <p>Welcome to SysPAC - the Systems, Architecture, and Parallel Computing Group at IIITs. We are dedicated to conducting cutting-edge research and experiments across various systems, architectures, and computing software, with a focus on the intersection of system software and computer architecture. Additionally, we are committed to educating and training the next generation of researchers and professionals in Systems, Architecture, and Parallel Computing through mentorship programs, workshops, and hands-on research experiences. We will also organize a programming language and system software conference, inviting individuals from all backgrounds to share their unique projects and insights within these domains.</p>
+            </div>
+
+            <h2>Current Research Projects</h2>
+            <div class="tasks-grid">
+                <div class="task-card">
+                    <h3>Register Based Custom VM</h3>
+                    <p>All the VM that the programming language uses are stack-based. These VM do not live up-to its performance potential as most of the time is spent on pushing and popping the constant and variable stack, so to counter this we would design a register based VM that follows CPU design. Similar routes have been followed by Lua 5.0, and have resulted in massive speed-ups.</p>
+                </div>
+
+                <div class="task-card">
+                    <h3>RISC-V Instruction Emulator</h3>
+                    <p>Being able to inspect the source code of RISC-V is a great advantage to improve the RISC-V architecture overall. But in the process of improving its architecture there is a need to create better instruction which decodes the instruction in a better way or add new instructions to add more capabilities to its ISA. To test all these features either need a RISC-V based cpu, which is a costlier solution as each and every time you modify an instruction and you want to test it, you have to fabricate the new process for testing. We aim to design a RISC-V based Emulator for the education community to use and understand the RISCV.</p>
+                    <p><strong>Principal Investigator:</strong> Arka Mondal (arkamondalofficial@gmail.com)</p>
+                </div>
+
+                <div class="task-card">
+                    <h3>WebAssembly (WASM)</h3>
+                    <p>WebAssembly was designed to bring the web closer to metal in terms of performance and efficiency. There are new features that are currently being proposed in the specification such as SIMD and multi-threading. And with this, it would be possible to conduct CPU intensive workloads on the web that was not previously possible. WASM as a target, will give us a way to write safe and performant code for the web easily.</p>
+                    <p><strong>Research Lead:</strong> URJASVI KUMAR SUTHAR</p>
+                </div>
+
+                <div class="task-card">
+                    <h3>Secure Communication Using Quantum Computing</h3>
+                    <p>This project is focused on developing a comprehensive framework for secure communication by leveraging quantum computing technologies. By utilizing the distinct properties of quantum mechanics, the framework will ensure the privacy and integrity of data. It will integrate quantum key distribution (QKD) protocols, quantum encryption methods, and error correction techniques to protect communications within both classical and quantum networks. The primary objective is to create algorithms that seamlessly incorporate quantum cryptography into existing communication infrastructures, ensuring high scalability, minimal latency, and optimal security. The ultimate aim is to provide adaptive solutions that facilitate a smooth transition between classical and quantum security models, thereby ensuring resilience against the evolving landscape of cyber threats.</p>
+                    <p><strong>Research Lead:</strong> Rohit Bantupalli (rohit.b@iiits.in)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>Contact</h2>
+            <p>Prof. Bheemappa H<br>
+            <a href="mailto:bheemappa.h@iiits.in">bheemappa.h@iiits.in</a></p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Copyright © BHH. All Rights Reserved | <a href="">CSE</a> | <a href="http://www.iiits.in">IIITS</a></p>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            $('a[href^="#"]').on('click', function(event) {
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top - 70
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
